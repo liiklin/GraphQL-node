@@ -1,17 +1,15 @@
 import Sequelize from 'sequelize'
 import _ from 'lodash'
 
-const Conn = new Sequelize(
-    'app',
-    'admin',
-    'mypass', {
-        dialect: 'mysql',
-        host: 'localhost',
-        logging: function(){},
-        benchmark: true,
-        omitNull: true
-    }
-)
+const connArgs = ['app', 'admin', 'mypass', {
+    dialect: 'mysql',
+    host: 'localhost',
+    logging: function() {},
+    benchmark: true,
+    omitNull: true
+}]
+
+const Conn = new Sequelize(...connArgs)
 
 const User = Conn.define('user', {
     name: {
