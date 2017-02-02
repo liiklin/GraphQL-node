@@ -7,7 +7,7 @@ const Conn = new Sequelize(
     'mypass', {
         dialect: 'mysql',
         host: 'localhost',
-        logging: console.log,
+        logging: function(){},
         benchmark: true,
         omitNull: true
     }
